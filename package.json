@@ -1,0 +1,33 @@
+{
+  "name": "druk-food-recipe",
+  "version": "1.0.0",
+  "description": "Druk Food Recipe Website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ghishing",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "hbs": "^4.2.0",
+    "kill-port": "^2.0.1",
+    "method-override": "^3.0.0",
+    "mongodb": "^4.11.0",
+    "mongoose": "^6.6.5",
+    "mongoose-findorcreate": "^3.0.0",
+    "multer": "^1.3.0",
+    "multer-gridfs-storage": "^1.3.0",
+    "nodemailer": "^6.8.0",
+    "passport": "^0.6.0",
+    "passport-google-oauth2": "^0.2.0",
+    "passport-google-oauth20": "^2.0.0",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^7.1.2"
+  }
+}

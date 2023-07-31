@@ -1,0 +1,61 @@
+
+<!--Edit Post -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update your post </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="icon" href="/images/logo.png">
+    <link rel="stylesheet" href="/css/newpost.css">
+    <link rel="stylesheet" href="/css/nav.css">
+
+</head>
+<header>
+
+    <a href="/" class="logo"><span>DrukFood</span>Recipe</a>
+
+    <input type="checkbox" id="menu-bar">
+    <label for="menu-bar" class="fas fa-bars"></label>
+
+    <nav class="navbar">
+        <a href="/#menu">Recipe</a>
+        <a href="#contact">About Us</a>
+
+         {{#if currentUser}}
+                <a href="/mypost/{{currentUser.name}}">
+                   {{currentUser.name}}
+                </a>
+                <a href="/logout">logout</a>
+         {{else}}
+         <a href="/login">Sign In</a>
+         {{/if}}
+
+
+    </nav>
+
+</header>
+
+<section class="contact">
+
+    <form action="/{{post._id}}/?_method=PUT" method="POST">
+
+        <h1 class="heading" style="color: #F83292; font-weight:500">Update Your Recipe</h1>
+
+        <div class="inputBox">
+            <input type="text" name="post[postTitle]" value="{{post.postTitle}}" required>
+            <label>Recipe Title</label>
+        </div>
+
+
+
+        <div class="inputBox">
+            <textarea required name="post[description]"  cols="30" rows="10">{{post.description}}</textarea>
+            <label>Recipe Description</label>
+        </div>
+
+        <input type="submit" class="btn" value="Update">
+
+    </form>
+
+</section>

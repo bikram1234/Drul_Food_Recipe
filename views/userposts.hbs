@@ -1,0 +1,87 @@
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View More</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="css/showindividual.css">
+    <link rel="icon" href="/images/logo.png">
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/comment.css">
+    <link rel="stylesheet" href="/css/mypost.css">
+        <link rel="icon" href="/images/logo.png">
+
+</head>
+
+<header>
+
+    <a href="/admin/dashboard" class="logo">Admin Dashboard</a>
+
+    <input type="checkbox" id="menu-bar">
+    <label for="menu-bar" class="fas fa-bars"></label>
+
+    <nav class="navbar">
+        <a href="/admin/dashboard">Dashboard</a>
+        <a href="/admin/logout">logout</a>
+       
+    </nav>
+
+</header>
+  <section class="menu" id="menu">
+    <div class="content" style="padding-top:4rem">
+ {{#each founduser}}
+        <h2 style="text-decoration: none;">{{this.name}}</h2>
+           {{/each}}
+    </div>
+    <div class="content">
+           {{#each foundpost}}
+            <div class="box">
+                <div class="imgBx">
+                    <img src="/images/upload/{{this.image}}" alt="">
+                </div>
+                <div class="text">
+                    
+
+                     <p style="font-size:20px">
+                         {{this.postTitle}}
+                    <p>
+                </div>
+                <div class="text">
+                    <p style="font-size:12px">
+                        {{this.description}}
+                    <p>
+                </div>
+              
+                <div class="titlecard">
+                    <form id="delete-form" action="/admin/users/dash/{{this._id}}?_method=DELETE" method="POST">
+                    <button class="btn">Delete</button></form>
+                </div>
+
+            </div>
+
+         {{/each}}
+            
+
+    </div>
+</section>
+ 
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

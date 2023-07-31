@@ -1,0 +1,38 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+<link rel="icon" href="/images/logo.png">
+<link rel="stylesheet" href="css/register.css" />
+<title>Sign up</title>
+<div class="container">
+    <div class="forms-container">
+        <div class="signin-signup">
+
+            <form action="/register" class="sign-up-form" method="POST">
+                <h2 class="title">Sign Up</h2>
+                <p class="social-text">Sign up with Google Account</p>
+                <div class="social-media">
+                    <a href="/auth/google" class="social-icon">
+                        <i class="fab fa-google"></i>
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="panels-container">
+        <div class="panel left-panel">
+            <div class="content">
+                <h3>Already a member of Druk Recipe ?</h3>
+                <p>
+                    {{!-- Seems like you already have an account in Druk Recipe, if so, provide your creditentials and become an authentic user to perform action in Druk Recipe --}}
+                </p>
+                <a href="/login">
+                    <button class="btn transparent" id="sign-in-btn">
+              Sign in
+            </button>
+                </a>
+            </div>
+            <img src="images/undraw_barbecue_3x93.svg" class="image" alt="" />
+        </div>
+    </div>
+</div>

@@ -1,0 +1,135 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Druk Food Recipe Langing Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="icon" href="/images/logo.png">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/nav.css">
+     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/cardview.css">
+
+</head>
+
+<header>
+
+    <a href="/" class="logo"><span style="text-decoration: none;">DrukFo</span>odRecipe</a>
+
+    <input type="checkbox" id="menu-bar">
+    <label for="menu-bar" class="fas fa-bars"></label>
+
+    <nav class="navbar" style="background-color: #061167;">
+
+    
+        <a href="#menu">Recipe</a>
+        <a href="/about">About Us</a>
+        
+       
+
+    
+            
+
+         {{#if currentUser}}
+                <a href="/mypost/{{currentUser.name}}">
+                   {{currentUser.name}}
+                </a>
+                <a href="/logout">Logout</a>
+         {{else}}
+         <a href="/login">Sign In</a>
+         {{/if}}
+               
+    </nav>
+
+</header>
+
+
+
+
+<section class="home" id="home">
+    <div class="content">
+        <h3 style="">Learn to cook <span>Delicious</span></h3>
+        <p>Druk Food Recipe act as a bridge between enthusiastic learners who wishes to try the recipe from other users and who is passionate to share thier recipe </p>
+        <a href="/newpost" class="btn">Add Your Recipe </a>
+    </div>
+    <div class="image">
+        <img src="images/undraw_chef_cu-0-r.svg" alt="">
+    </div>
+
+</section>
+
+<section class="menu" id="menu">
+    <div class="content">
+        <h3 style="font-weight: 500;">Check our <span> Delicious Recipe</span></h3>
+    </div>
+    <div class="content">
+        {{#each posts}}
+            <div class="box">
+                <div class="imgBx">
+                    <img src="/images/upload/{{this.image}}" alt="">
+                </div>
+                <div class="text">
+                    <h2>
+                        {{this.postTitle }}
+                    </h2>
+                </div>
+                <div class="titlecard">
+                    <a href="{{this._id}}" class="btn">View More</a>
+                </div>
+            </div>
+
+         {{/each}}
+            
+
+    </div>
+</section>
+
+<div class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+            <h3>Druk Food Recipe</h3>
+            <p>Thank your for visiting us and keep learninging how to cook delicious <br> Stay healthy and safe </p>
+        </div>
+
+        <div class="box">
+            <h3>Quick Access</h3>
+            <a href="/">Home</a>
+            <a href="/about">About Us</a>
+            <a href="/#menu">Post</a>
+        </div>
+
+<div class="box">
+            <h3>Quick links</h3>
+            <a href="https://traveltriangle.com/">Traveltriangle</a>
+            <a href="https://migrationology.com">Migrationology</a>
+            <a href="https://www.holidify.com/">Holidify</a>
+            <a href="https://www.bhutaninbound.com/">Bhutaninbound</a>
+        </div>
+
+        <div class="box">
+            <h3>Contact Info</h3>
+            <div class="info">
+                <i class="fas fa-phone"></i>
+                <p> +915 17692664 </p>
+            </div>
+            <div class="info">
+                <i class="fas fa-envelope"></i>
+                <p> 12190048.gcit@rub.edu.bt </p>
+            </div>
+            <div class="info">
+                <i class="fas fa-map-marker-alt"></i>
+                <p> Gyalpozhing, Mongar , Bhutan </p>
+            </div>
+        </div>
+
+    </div>
+
+    <h1 class="credit"> Copyright &copy; 2022 GCITian <br>All Rights Reserved </h1>
+
+</div>
+
+<!-- footer section ends -->
+
+

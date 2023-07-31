@@ -1,0 +1,50 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Comment</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="icon" href="/images/logo.png">
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/comment.css">
+</head>
+
+<header>
+
+    <a href="/" class="logo"><span>DrukFo</span>odRecipe</a>
+
+    <input type="checkbox" id="menu-bar">
+    <label for="menu-bar" class="fas fa-bars"></label>
+
+    <nav class="navbar">
+        <a href="#menu">Recipe</a>
+        <a href="#contact">About Us</a>
+         {{#if currentUser}}
+                <a href="/user/{{currentUser}}">
+                   {{currentUser.name}}
+                </a>
+                <a href="/logout">logout</a>
+         {{else}}
+         <a href="/login">Sign In</a>
+         {{/if}}
+               
+    </nav>
+
+</header>
+
+
+<section class="contact">
+
+    <form action="/{{post._id}}/comments" method="POST">
+
+        <h1 class="heading">Add Comment</h1>
+
+        <div class="inputBox">
+            <textarea name="comment[usercomment]"required> </textarea>
+        </div>
+        <input type="submit" class="btn" value="Publish">
+       
+
+    </form>
+
+</section>

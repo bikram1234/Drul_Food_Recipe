@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+        <link rel="icon" href="/images/logo.png">
+         
+
+    
+</head>
+
+<body>
+    <style>
+                @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,500&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+        
+        p {
+            font-weight: 300;
+            color: #111;
+        }
+        
+        .banner {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url(images/bg.jpg);
+            background-size: cover;
+        }
+        
+        .banner .content {
+            max-width: 900px;
+            text-align: center;
+        }
+        
+        .banner .content h2 {
+            font-size: 5em;
+            color: #fff;
+        }
+        
+        .banner .content p {
+            font-size: 1em;
+            color: #fff;
+        }
+        
+        .btn {
+            font-size: 1em;
+            color: #fff;
+            background: #F83292;;
+            display: inline-block;
+            padding: 10px 30px;
+            margin-top: 20px;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.5s;
+        }
+        
+        .btn:hover {
+            letter-spacing: 6px;
+        }
+        
+        header {
+            position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #061167;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    padding: 2rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+   
+        }
+        
+        header.sticky {
+            background: #fff;
+            padding: 10px 100px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        header .logo {
+            color: #fff;
+            font-weight: 400;
+            font-size: 1.8em;
+            text-decoration: none;
+        }
+        
+        header.sticky .logo {
+            color: #111;
+        }
+        
+        header .logo span {
+            color: #F83292;;
+        }
+        
+        header .navigation {
+            position: relative;
+            display: flex;
+        }
+        
+        header .navigation li {
+            list-style: none;
+            margin-left: 30px;
+        }
+        
+        header .navigation li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 400;
+            font-size: large;
+        }
+        
+        header.sticky .navigation li a {
+            color: #111;
+        }
+        
+        header .navigation li a:hover {
+            color: #F83292;
+        }
+        
+        section {
+            padding: 100px;
+            margin-top: 100px;
+        }
+        
+        .row {
+            position: relative;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .row .col150 {
+            position: relative;
+            width: 48%;
+        }
+        
+        .titletxt {
+            color: #111;
+            font-size: 2em;
+            font-weight: 300;
+        }
+        
+        .titletxt span {
+            color: #F83292;;
+            font-weight: 700;
+            font-size: 1.5em;
+        }
+        
+        .row .col150 .imgBx {
+            position: relative;
+            width: 100%;
+            min-height: 300px;
+        }
+        
+        .row .col150 .imgBx img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .title {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        
+        .menu .content {
+            display: flex;
+            justify-content: center;
+            flex-direction: row-reverse;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+        
+        .menu .content .box {
+            width: 340px;
+            margin: 20px;
+            border: 15px solid #fff;
+            box-shadow: 0 5px 35px rgba(0, 0, 0, 0.08);
+        }
+        
+        .menu .content .box .imgBx {
+            position: relative;
+            width: 100%;
+            height: 300px;
+        }
+        
+        .menu .content .box .imgBx img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .menu .content .box .text {
+            padding: 15px 0 5px;
+        }
+        
+        .menu .content .box .text h3 {
+            font-weight: 400;
+            color: #111;
+        }
+        
+        .expert .content {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            flex-direction: row;
+            margin-top: 40px;
+        }
+        
+        .expert .content .box {
+            width: 250px;
+            margin: 15px;
+        }
+        
+        .expert .content .box .imgBx {
+            position: relative;
+            width: 100%;
+            height: 300px;
+        }
+        
+        .expert .content .box .imgBx img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .expert .content .box .text {
+            padding: 15px 0 5px;
+        }
+        
+        .expert .content .box .text h3 {
+            font-weight: 400;
+            color: #111;
+        }
+        
+        .testimonial {
+            background: url(images/test_back.jpg);
+            background-size: cover;
+        }
+        
+        .white .titletxt,
+        .white p {
+            color: #fff;
+        }
+        
+        .testimonial .content {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            flex-direction: row;
+            margin-top: 40px;
+        }
+        
+        .testimonial .content .box {
+            width: 340px;
+            margin: 20px;
+            padding: 40px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        
+        .testimonial .content .box .imgBx {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        
+        .testimonial .content .box .imgBx img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .testimonial .content .box .text {
+            text-align: center;
+        }
+        
+        .testimonial .content .box .text p {
+            color: #666;
+            font-style: italic;
+        }
+        
+        .testimonial .content .box .text h3 {
+            margin-top: 20px;
+            color: #111;
+            font-size: 1em;
+            color: #F83292;
+            font-weight: 600;
+        }
+        
+        .contact {
+            background: url(images/bg3.jpg);
+            background-size: cover;
+        }
+        
+        .contactForm {
+            padding: 75px 50px;
+            background: #fff;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin-top: 50px
+        }
+        
+        .contactForm h3 {
+            color: #111;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
+        .contactForm .inputBox {
+            position: relative;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        
+        .contactForm .inputBox input {
+            width: 100%;
+            border: 1px solid #555;
+            padding: 10px;
+            color: #111;
+            outline: none;
+            font-size: 16px;
+            font-weight: 300;
+        }
+        
+        .contactForm .inputBox input[type="submit"] {
+            font-size: 1em;
+            color: #111;
+            background: #F83292;
+            display: inline-block;
+            text-transform: uppercase;
+            text-decoration: none;
+            letter-spacing: 2px;
+            transition: 0.5s;
+            max-width: 100px;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .copy {
+            padding: 8px 40px;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .copy p {
+            color: #333;
+        }
+        
+        .copy a {
+            color: #F83292;
+            font-weight: 500;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 991px) {
+            header,
+            header.sticky {
+                padding: 10px 20px;
+            }
+            header .navigation {
+                display: none;
+            }
+            header .navigation.active {
+                width: 100%;
+                height: calc(100% - 68px);
+                position: fixed;
+                top: 68px;
+                left: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                background: #fff;
+            }
+            .menuToggle {
+                position: relative;
+                width: 40px;
+                height: 40px;
+                background: url(images/menu.png);
+                background-size: 30px;
+                background-repeat: no-repeat;
+                background-position: center;
+                cursor: pointer;
+            }
+            .menuToggle.active {
+                background: url(images/close.png);
+                background-size: 25px;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+            header.sticky .menuToggle {
+                filter: invert();
+            }
+            header .navigation li {
+                margin-left: 0;
+            }
+            header .navigation li a {
+                text-decoration: none;
+                color: #111;
+                font-size: 1.6em;
+                font-weight: 300;
+            }
+            section {
+                padding: 20px;
+            }
+            .banner .content h2 {
+                font-size: 3em;
+                color: #fff;
+            }
+            .row {
+                flex-direction: column;
+            }
+            .row .col150 {
+                position: relative;
+                width: 100%;
+            }
+            .row .col150 .imgBx {
+                position: relative;
+                width: 100%;
+                height: 300px;
+                margin-top: 20px;
+            }
+            .menu .content {
+                margin-top: 20px;
+            }
+            .menu .content .box {
+                margin: 10px;
+            }
+        }
+    </style>
+    <header>
+        <a href="/" class="logo"><span>DrukFo</span>odRecipe</a>
+        <div class="menuToggle" onclick="toggleMenu();"></div>
+        <ul class="navigation">
+            <li><a href="../#menu">Recipe</a></li>
+            <li><a href="/about">About</a></li>
+                  {{#if currentUser}}
+
+            <li><a href="/mypost/{{currentUser.name}}">{{currentUser.name}}</a></li>
+            <li><a href="/logout">Logout</a></li>
+
+                  {{else}}
+                  <li><a href="/login">Sign In</a></li>
+         {{/if}}
+        </ul>
+           </header>
+
+    <section class="about" id="about">
+        <div class="row">
+            <div class="col150">
+                <h2 class="titletxt"><span>A</span>bout Us</h2>
+                <p>Hello, Druk Food Recipe is a website that's going to provide a platform for these interested people to share their recipes through videos and instructions. It is not only going to help people to share their recipes, their love for cooking but also other people can learn through those post and instructions.
+                    <br><br>
+                    It would help in preserving and spreading the traditional dishes of our country which are just as important as our cultures.The website designed and developed by Team Druk Food recipes and is hosted or deployed in the heroku server and users will be given access to view, post, delete, update and comment on the post.
+
+                </p></div>
+            <div class="col150">
+                <div class="imgBx">
+                    <img src="images/image-1.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="testimonial" id="testimonial">
+        <div class="title white">
+            <div class="titletxt">The<span>W</span>ebsite looks for</div>
+            <p>We are here to share love via food, and we have set goals and missions to do so.  </p>
+        </div>
+        <div class="content">
+            <div class="box">
+                <div class="imgBx">
+                    <img src="images/aim.jpg" alt="">
+                    <br><br>
+                </div>
+                <div class="text">
+                    <h3>Aim</h3>
+                    <p>These interested folks can upload their recipes together with photographs and instructions on the website Druk Food Recipe. 
+
+                        The aim of this website is to provide a user-friendly, low-cost website for those who want to share their passion of cooking by providing the essential recipes and a blog.
+                        It would aid in maintaining and disseminating our nation's traditional foods, which are equally as significant to our civilizations.  
+                    </p>
+                </div>
+            </div>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="images/goal.webp" alt="">
+                </div>
+                <div class="text">
+                    <h3>Goal</h3>
+                    <br>
+                    <p>The website Druk Food Recipe will give anyone who are interested a place to post their recipes together with images and instructions.
+                        This project's objective is to create a responsive website where users may share food recipe instructions and videos, as well as a simple perspective for those searching for food recipes in the form of video blogs and scripts. </p>
+                </div>
+            </div>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="images/mission.jpg" alt="">
+                </div>
+                <div class="text">
+                    <h3>Mission</h3>
+                    <p>Druk Food Recipe is a website that will allow these interested individuals to share their recipes via Photos and instructions.
+                        It will not only allow individuals to share their recipes and passion for cooking, but it will also allow others to learn from those videos and instructions.
+                        It would aid in the preservation and spread of our country's traditional cuisine, which are as vital as our cultures. 
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <section class="expert" id="expert">
+        <div class="title">
+            <div class="titletxt">Our<span>T</span>eam</div>
+            <p>Our team consist of five members, who have their own different roles while developing this magnificant website.</p>
+        </div>
+        <div class="content">
+            <div class="box">
+                <div class="imgBx">
+                    <img src="images/bik.jpg" alt="">
+                </div>
+                <div class="text">
+                    <h3>Bik Ram chuwan</h3>
+                    <h4>Product Owner</h4>
+                </div>
+            </div>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="images/nima.jpg" alt="">
+                </div>
+                <div class="text">
+                    <h3>Nima Gyeltshen</h3>
+                    <h4>Scrum Master</h4>
+                </div>
+            </div>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="images/ghishing.jpg" alt="">
+                </div>
+                <div class="text">
+                    <h3>Dhendup Ghishing</h3>
+                    <h4>Developer</h4>
+                </div>
+            </div>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="images/lhashing.jpg" alt="">
+                </div>
+                <div class="text">
+                    <h3>Jamyang Lhashing</h3>
+                    <h4>Developer</h4>
+                </div>
+            </div>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="images/kinley.jpg" alt="">
+                </div>
+                <div class="text">
+                    <h3>Kinley Gyeltshen</h3>
+                    <h4>Developer</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="title">
+            <div class="titletxt"><span>C</span>ontact Us</div>
+            <p>If you have any questions, feel free to contact DrukFood Recipe</p>
+        </div>
+        <div class="contactForm">
+            <h3>Send Message</h3>
+            <div class="inputBox">
+                <input type="text" placeholder="Name">
+            </div>
+            <div class="inputBox">
+                <input type="text" placeholder="Email">
+            </div>
+            <div class="inputBox">
+                <textarea placeholder="Comment"></textarea>
+            </div>
+            <div class="inputBox">
+                <input type="submit" value="Send">
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+    <script type="text/javascript">
+      
+
+        function toggleMenu() {
+            const menuToggle = document.querySelector('.menuToggle');
+            const navigation = document.querySelector('.navigation');
+            menuToggle.classList.toggle('active');
+            navigation.classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>

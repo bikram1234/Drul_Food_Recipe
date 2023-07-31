@@ -1,0 +1,172 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View More</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   
+    <link rel="icon" href="/images/logo.png">
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/navabout.css">
+      <link rel="stylesheet" href="css/footer.css">
+
+     <link rel="stylesheet" href="css/showindividual.css">
+     
+    <link rel="stylesheet" href="css/comment.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+</head>
+<header>
+    <style>
+    </style>
+
+    <a href="/" class="logo" style="text-decoration: none;"><span>DrukFo</span>odRecipe</a>
+
+    <input type="checkbox" id="menu-bar">
+    <label for="menu-bar" class="fas fa-bars"></label>
+
+    <nav class="navbar" style="background-color: #061167;">
+        <a href="../#menu">Recipe</a>
+        <a href="../about">About Us</a>
+        {{#if currentUser}}
+        <a href="/mypost/{{currentUser.name}}">
+            {{currentUser.name}}
+        </a>
+        <a href="/logout">logout</a>
+        {{else}}
+        <a href="/login">Sign In</a>
+        {{/if}}
+
+    </nav>
+
+</header>
+<div class="alert alert-warning" role="alert">
+  A simple warning alert—check it out!
+</div>
+
+
+<section class="about" id="about">
+    <div class="column">
+        <div class="image">
+            <img src="/images/upload/{{posts.image}}" alt="">
+            <h5>
+                Recipe Owner @{{posts.author.name}}
+            </h5>
+        </div>
+  
+   
+
+        <div class="content">
+            <h3>
+                {{posts.postTitle}}
+            </h3>
+            <p>
+                {{posts.description}}
+            </p>
+
+        </div>
+
+    </div>
+    <div class="container mt-5">
+        <div class="d-flex justify-content-center row ">
+        
+            <div class="col-md-8 pb-4 ">
+                 {{#each posts.comments}}
+                <div class="bg-white">
+                    
+                    
+                    <div class="d-flex flex-row user-info">
+                        <img src="{{this.author.profilepic}}" alt="" width="50px" height="50px" class="rounded-circle">
+                        <div class="d-flex flex-column justify-content-start ml-2" style="margin-left: 40px">
+                            <h5 class="d-block font-weight-bold name">@{{this.author.name}}:</h5>
+                             <span class="comment-text-xl font-size-2 text-black ml-5" style="font-size: 1.5rem;width:100%" > {{usercomment}}</span>
+                        </div>
+                    </div>
+                    <div class="bg-white">
+                        <div class="d-flex flex-row fs-12 mb-5" style="margin-left: 8rem;  ">
+                            <div class="like p-2 cursor">
+                                
+                                <i class="fa fa-pencil-square-o" style="font-size:large"></i>
+                                <a href="/{{../posts._id}}/comments/{{_id}}/edit" class="ml-1" style="text-decoration: none;color:black;">Edit</a>
+                            </div>
+                            <div class="like p-2 cursor">
+                                <form id="delete-form" action="/{{../posts._id}}/comments/{{_id}}?_method=DELETE"
+                                    method="POST">
+                                    <i class="fa fa-trash-o" style="font-size:large;"></i>
+                                    <button class="ml-1">Delete</button>
+                                </form>
+                            </div>
+                             
+                        </div>
+                     
+                        </div>
+                </div>
+                          {{/each}}
+          
+                          <div class="content">
+                            <div class="titlecard">
+                                
+                                <a href="/{{posts._id}}/comments/newcomment" class="btn" style="text-decoration:none;" type="submit"> Comment</a>
+                            </div>
+                            </form>
+                        </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</section>
+
+
+<div class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+            <h3>Druk Food Recipe</h3>
+            <p>Thank your for visiting us and keep learninging how to cook delicious <br> Stay healthy and safe </p>
+        </div>
+
+        <div class="box">
+            <h3>Quick Access</h3>
+            <a href="/">Home</a>
+            <a href="/about">About Us</a>
+            <a href="/#menu">Post</a>
+        </div>
+
+<div class="box">
+            <h3>Quick links</h3>
+            <a href="https://traveltriangle.com/">Traveltriangle</a>
+            <a href="https://migrationology.com">Migrationology</a>
+            <a href="https://www.holidify.com/">Holidify</a>
+            <a href="https://www.bhutaninbound.com/">Bhutaninbound</a>
+        </div>
+
+        <div class="box">
+            <h3>Contact Info</h3>
+            <div class="info">
+                <i class="fas fa-phone"></i>
+                <p> +915 17692664 </p>
+            </div>
+            <div class="info">
+                <i class="fas fa-envelope"></i>
+                <p> 12190048.gcit@rub.edu.bt </p>
+            </div>
+            <div class="info">
+                <i class="fas fa-map-marker-alt"></i>
+                <p> Gyalpozhing, Mongar , Bhutan </p>
+            </div>
+        </div>
+
+    </div>
+
+    <h1 class="credit"> Copyright &copy; 2022 GCITian <br>All Rights Reserved </h1>
+
+</div>
+    
